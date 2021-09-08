@@ -25,7 +25,7 @@ jobs:
         id: generate-colored-output
         run: ...
       - name: Remove ANSI color codes
-        uses: marcransome/remove-ansi-colors@main
+        uses: marcransome/remove-ansi-colors@v1
         id: remove-ansi-colors
         with:
           colored: ${{ steps.generate-colored-output.outputs.stdout }}
