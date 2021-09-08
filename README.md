@@ -1,6 +1,8 @@
 # remove-ansi-colors
 
-# Prerequisites
+A GitHub action for removing ANSI color escape sequences from arbitrary strings.
+
+## Prerequisites
 
 This action has a few dependencies that are generally satisfied by most [GitHub-hosted runners](https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners) (`macos-*` and `ubuntu-*` environment variants):
 
