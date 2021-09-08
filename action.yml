@@ -1,0 +1,16 @@
+name: 'remove-ansi-colors'
+description: 'A GitHub action for removing ANSI color escape sequences from arbitrary strings'
+inputs:
+  colored:
+    description: 'The string containing ANSI color escape sequences'
+outputs:
+  uncolored:
+    description: 'The string with ANSI color escape sequences removed'
+    value: ${{ steps.ansi-code-removal.outputs.uncolored }}
+runs:
+  using: 'composite'
+  steps:
+    - id: ansi-code-removal
+      run: |
+        echo "::set-output name=uncolored::$(echo ${{ inputs.colored }} | perl -pe 's/\e\[[0-9;]*m//g')"
+      shell: bash
