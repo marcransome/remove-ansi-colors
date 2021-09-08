@@ -15,5 +15,5 @@ runs:
   steps:
     - id: ansi-code-removal
       run: |
-        echo "::set-output name=uncolored::$(echo ${{ inputs.colored }} | perl -pe 's/\e\[[0-9;]*m//g')"
+        echo "::set-output name=uncolored::$(echo '${{ inputs.colored }}' | perl -pe 's/\e\[[0-9;]*m//g')"
       shell: bash
