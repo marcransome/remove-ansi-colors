@@ -1,5 +1,8 @@
 name: 'remove-ansi-colors'
 description: 'A GitHub action for removing ANSI color escape sequences from arbitrary strings'
+branding:
+  icon: 'filter'
+  color: 'green'
 inputs:
   colored:
     description: 'The string containing ANSI color escape sequences'
