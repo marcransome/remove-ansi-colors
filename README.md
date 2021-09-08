@@ -1,5 +1,7 @@
 # remove-ansi-colors
 
+[![License](https://img.shields.io/badge/license-MIT-blue)](http://opensource.org/licenses/mit-license.php) [![Issues](https://img.shields.io/github/issues/marcransome/remove-ansi-colors)](https://github.com/marcransome/remove-ansi-colors/issues)
+
 A GitHub action for removing ANSI color escape sequences from arbitrary strings.
 
 ## Prerequisites
