@@ -5,7 +5,7 @@ branding:
   color: 'green'
 inputs:
   colored:
-    description: 'The string containing ANSI color escape sequences'
+    description: 'A string containing ANSI color escape sequences'
 outputs:
   uncolored:
     description: 'The string with ANSI color escape sequences removed'
