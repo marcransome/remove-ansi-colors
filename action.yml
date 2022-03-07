@@ -6,6 +6,7 @@ branding:
 inputs:
   colored:
     description: 'A string containing ANSI color escape sequences'
+    required: true
 outputs:
   uncolored:
     description: 'The string with ANSI color escape sequences removed'
