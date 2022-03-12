@@ -14,7 +14,7 @@ This action has a few dependencies that are generally satisfied by most [GitHub-
 
 ## Usage
 
-Add a suitable `uses` step to your GitHub [workflow](https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions) with a value for the `colored` step input (i.e. a string that includes ANSI color escape sequences) and use the `uncolored` output in subsequent steps:
+Add a suitable `uses` step to your GitHub [workflow](https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions) with a value for the `colored` step input (i.e. an output from a previous step that includes ANSI color escape sequences) and use the `uncolored` output in subsequent steps:
 
 ```yaml
 jobs:
@@ -23,12 +23,14 @@ jobs:
     steps:
       - name: A step that generates output with ANSI color escape sequences
         id: generate-colored-output
-        run: ...
+        run: |
+          colored=$(printf '\e[0;31mCOLORED\e[0m')
+          echo "::set-output name=colored::$colored"
       - name: Remove ANSI color codes
         uses: marcransome/remove-ansi-colors@v1
         id: remove-ansi-colors
         with:
-          colored: ${{ steps.generate-colored-output.outputs.stdout }}
+          colored: ${{ steps.generate-colored-output.outputs.colored }}
       - name: Use uncolored output
         run: echo "${{ steps.remove-ansi-colors.outputs.uncolored }}"
 ```
