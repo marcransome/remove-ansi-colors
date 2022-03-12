@@ -24,15 +24,16 @@ jobs:
       - name: Generate string with ANSI color codes
         id: generate-colored-output
         run: |
-          printf '\e[0;31mRED\e[0m'
+          colored=$(printf '\e[0;31mRED\e[0m')
+          echo '::set-output name=colored::$colored'
       - name: Assert ANSI color codes present
         run: |
-          [[ "${{ steps.generate-colored-output.outputs.stdout }}" != $(printf '\e[0;31mRED\e[0m') ]] && exit 1
+          [[ "${{ steps.generate-colored-output.outputs.colored }}" != $(printf '\e[0;31mRED\e[0m') ]] && exit 1
       - name: Remove ANSI color codes
         uses: ./
         id: remove-ansi-colors
         with:
-          colored: ${{ steps.generate-colored-output.outputs.stdout }}
+          colored: ${{ steps.generate-colored-output.outputs.colored }}
       - name: Assert ANSI color codes removed
         run: |
           [[ "${{ steps.remove-ansi-colors.outputs.uncolored }}" != "RED" ]] && exit 1
