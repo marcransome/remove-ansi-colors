@@ -28,7 +28,10 @@ jobs:
           echo "::set-output name=colored::$colored"
       - name: Assert ANSI color codes present
         run: |
-          [[ "${{ steps.generate-colored-output.outputs.colored }}" != $(printf '\e[0;31mRED\e[0m') ]] && exit 1
+          if [[ "${{ steps.generate-colored-output.outputs.colored }}" != $(printf '\e[0;31mRED\e[0m') ]]; then
+              echo "Test string is expected to contain ANSI color codes"
+              exit 1
+          fi
         continue-on-error: true
       - name: Remove ANSI color codes
         uses: ./
@@ -38,8 +41,7 @@ jobs:
       - name: Assert ANSI color codes removed
         run: |
           if [[ "${{ steps.generate-colored-output.outputs.colored }}" != "RED" ]]; then
-              echo "Expect: RED"
-              echo "Got: ${{ steps.generate-colored-output.outputs.colored }}"
+              echo "Output string is not expected to contain ANSI color codes"
               exit 1
           fi
     
