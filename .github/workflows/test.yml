@@ -37,5 +37,6 @@ jobs:
           colored: ${{ steps.generate-colored-output.outputs.colored }}
       - name: Assert ANSI color codes removed
         run: |
+          echo -e "${{ steps.remove-ansi-colors.outputs.uncolored }}"
           [[ "${{ steps.remove-ansi-colors.outputs.uncolored }}" != "RED" ]] && exit 1
     
