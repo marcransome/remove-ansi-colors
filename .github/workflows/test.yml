@@ -38,5 +38,6 @@ jobs:
       - name: Assert ANSI color codes removed
         run: |
           echo -e "${{ steps.remove-ansi-colors.outputs.uncolored }}"
+          echo -e "${{ steps.remove-ansi-colors.outputs.uncolored }}" | xxd
           [[ "${{ steps.remove-ansi-colors.outputs.uncolored }}" != "RED" ]] && exit 1
     
