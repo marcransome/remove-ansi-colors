@@ -39,7 +39,7 @@ jobs:
           colored: ${{ steps.generate-colored-output.outputs.colored }}
       - name: Assert ANSI color codes removed
         run: |
-          if [[ "${{ steps.generate-colored-output.outputs.colored }}" != "RED" ]]; then
+          if [[ "${{ steps.remove-ansi-colors.outputs.uncolored }}" != "RED" ]]; then
               echo "Output string is not expected to contain ANSI color codes"
               exit 1
           fi
