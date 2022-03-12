@@ -29,6 +29,7 @@ jobs:
       - name: Assert ANSI color codes present
         run: |
           [[ "${{ steps.generate-colored-output.outputs.colored }}" != $(printf '\e[0;31mRED\e[0m') ]] && exit 1
+        continue-on-error: true
       - name: Remove ANSI color codes
         uses: ./
         id: remove-ansi-colors
