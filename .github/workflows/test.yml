@@ -32,7 +32,6 @@ jobs:
               echo "Test string is expected to contain ANSI color codes"
               exit 1
           fi
-        continue-on-error: true
       - name: Remove ANSI color codes
         uses: ./
         id: remove-ansi-colors
