@@ -1,0 +1,39 @@
+name: tests
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  release:
+    types:
+      - published
+  schedule:
+    - cron: '30 19 * * *'
+jobs:
+  tests:
+    strategy:
+      matrix:
+        os:
+          - macos-latest
+          - ubuntu-latest
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v3
+      - name: Generate string with ANSI color codes
+        id: generate-colored-output
+        run: |
+          printf '\e[0;31mRED\e[0m'
+      - name: Assert ANSI color codes present
+        run: |
+          [[ "${{ steps.generate-colored-output.outputs.stdout }}" != $(printf '\e[0;31mRED\e[0m') ]] && exit 1
+      - name: Remove ANSI color codes
+        uses: ./
+        id: remove-ansi-colors
+        with:
+          colored: ${{ steps.generate-colored-output.outputs.stdout }}
+      - name: Assert ANSI color codes removed
+        run: |
+          [[ "${{ steps.remove-ansi-colors.outputs.uncolored }}" != "RED" ]] && exit 1
+    
