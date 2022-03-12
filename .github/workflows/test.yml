@@ -29,7 +29,7 @@ jobs:
       - name: Assert ANSI color codes present in input string
         run: |
           if [[ "${{ steps.generate-colored-output.outputs.colored }}" != $(printf '\e[0;31mCOLORED\e[0m') ]]; then
-              echo "Test string is expected to contain ANSI color codes"
+              echo "Test string should contain ANSI color codes"
               exit 1
           fi
       - name: Remove ANSI color codes
@@ -40,7 +40,7 @@ jobs:
       - name: Assert ANSI color codes removed from output string
         run: |
           if [[ "${{ steps.remove-ansi-colors.outputs.uncolored }}" != "COLORED" ]]; then
-              echo "Output string is should not contain ANSI color codes"
+              echo "Output string should not contain ANSI color codes"
               exit 1
           fi
     
