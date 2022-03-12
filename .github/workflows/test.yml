@@ -25,7 +25,7 @@ jobs:
         id: generate-colored-output
         run: |
           colored=$(printf '\e[0;31mRED\e[0m')
-          echo '::set-output name=colored::$colored'
+          echo "::set-output name=colored::$colored"
       - name: Assert ANSI color codes present
         run: |
           [[ "${{ steps.generate-colored-output.outputs.colored }}" != $(printf '\e[0;31mRED\e[0m') ]] && exit 1
