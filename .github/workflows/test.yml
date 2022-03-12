@@ -39,5 +39,7 @@ jobs:
         run: |
           echo -e "${{ steps.remove-ansi-colors.outputs.uncolored }}"
           echo -e "${{ steps.remove-ansi-colors.outputs.uncolored }}" | xxd
-          [[ "${{ steps.remove-ansi-colors.outputs.uncolored }}" != "RED" ]] && exit 1
+          if [[ "${{ steps.remove-ansi-colors.outputs.uncolored }}" != "RED" ]]; then
+              exit 1
+          fi
     
