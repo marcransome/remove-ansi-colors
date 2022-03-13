@@ -26,7 +26,7 @@ jobs:
         run: |
           colored=$(printf '\e[0;31mCOLORED\e[0m')
           echo "::set-output name=colored::$colored"
-      - name: Remove ANSI color codes
+      - name: Remove ANSI color escape sequences
         uses: marcransome/remove-ansi-colors@v1
         id: remove-ansi-colors
         with:

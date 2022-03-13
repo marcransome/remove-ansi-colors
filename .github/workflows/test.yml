@@ -21,26 +21,25 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v3
-      - name: Generate string with ANSI color codes
+      - name: Generate string with ANSI color escape sequences
         id: generate-colored-output
         run: |
           colored=$(printf '\e[0;31mCOLORED\e[0m')
           echo "::set-output name=colored::$colored"
-      - name: Assert ANSI color codes present in input string
+      - name: Assert ANSI color escape sequences present in input string
         run: |
           if [[ "${{ steps.generate-colored-output.outputs.colored }}" != $(printf '\e[0;31mCOLORED\e[0m') ]]; then
-              echo "Test string should contain ANSI color codes"
+              echo "Test string should contain ANSI color escape sequences"
               exit 1
           fi
-      - name: Remove ANSI color codes
+      - name: Remove ANSI color escape sequences
         uses: ./
         id: remove-ansi-colors
         with:
           colored: ${{ steps.generate-colored-output.outputs.colored }}
-      - name: Assert ANSI color codes removed from output string
+      - name: Assert ANSI color escape sequences removed from output string
         run: |
           if [[ "${{ steps.remove-ansi-colors.outputs.uncolored }}" != "COLORED" ]]; then
-              echo "Output string should not contain ANSI color codes"
+              echo "Output string should not contain ANSI color escape sequences"
               exit 1
           fi
-    
