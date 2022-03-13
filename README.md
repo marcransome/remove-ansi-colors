@@ -34,6 +34,14 @@ jobs:
         run: echo "${{ steps.remove-ansi-colors.outputs.uncolored }}"
 ```
 
+## Inputs
+
+* `colored` - A string containing ANSI color escape sequences.
+
+## Outputs
+
+* `uncolored` - The `colored` input string with ANSI color escape sequences removed.
+
 ## Action versions
 
 Use one of the following patterns when specifying the version reference for this action in your workflow (i.e. the `{ref}` value in `uses: marcransome/remove-ansi-colors@{ref}`):
