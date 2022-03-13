@@ -11,7 +11,6 @@ This action has a few dependencies that are generally satisfied by most [GitHub-
 * [GNU Bash](https://www.gnu.org/software/bash/)
 * [Perl](https://www.perl.org)
 
-
 ## Usage
 
 Add a suitable `uses` step to your GitHub [workflow](https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions) with a value for the `colored` step input (i.e. an output from a previous step that includes ANSI color escape sequences) and use the `uncolored` output in subsequent steps:
@@ -48,7 +47,6 @@ Use one of the following patterns when specifying the version reference for this
 The recommended pattern is `vX` (e.g. `v1`). This will ensure that the version of the action used in your workflow includes the latest non-breaking changes and bug fixes, and guarantees compatibility with previous versions of that major release number.
 
 Using a `main` branch reference in your workflow is _not_ recommended as this branch may include breaking changes intended for the next major release.
-
 
 ## License
 `remove-ansi-colors` is provided under the terms of the [MIT License](http://opensource.org/licenses/mit-license.php).
