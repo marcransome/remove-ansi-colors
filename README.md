@@ -1,6 +1,6 @@
 # remove-ansi-colors
 
-[![Issues](https://img.shields.io/github/issues/marcransome/remove-ansi-colors)](https://github.com/marcransome/remove-ansi-colors/issues/) [![Dependabot](https://img.shields.io/badge/dependabot-active-brightgreen.svg)](https://github.com/marcransome/remove-ansi-colors/network/dependencies) [![License](https://img.shields.io/badge/license-MIT-blue)](http://opensource.org/licenses/mit-license.php)
+[![Issues](https://img.shields.io/github/issues/marcransome/remove-ansi-colors)](https://github.com/marcransome/remove-ansi-colors/issues/) [![Dependabot](https://img.shields.io/badge/dependabot-active-brightgreen.svg)](https://github.com/marcransome/remove-ansi-colors/network/dependencies) [![License](https://img.shields.io/badge/license-MIT-blue)](https://opensource.org/licenses/mit-license.php)
 
 A GitHub action for removing ANSI color escape sequences from arbitrary strings.
 
@@ -57,7 +57,7 @@ The recommended pattern is `vX` (e.g. `v1`). This will ensure that the version o
 Using a `main` branch reference in your workflow is _not_ recommended as this branch may include breaking changes intended for the next major release.
 
 ## License
-`remove-ansi-colors` is provided under the terms of the [MIT License](http://opensource.org/licenses/mit-license.php).
+`remove-ansi-colors` is provided under the terms of the [MIT License](https://opensource.org/licenses/mit-license.php).
 
 ## Contact
 Email me at [marc.ransome@fidgetbox.co.uk](mailto:marc.ransome@fidgetbox.co.uk) or tweet [@marcransome](http://www.twitter.com/marcransome).
