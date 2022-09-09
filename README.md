@@ -58,6 +58,10 @@ The recommended pattern is `vX` (e.g. `v1`). This will ensure that the version o
 
 Using a `main` branch reference in your workflow is _not_ recommended as this branch may include breaking changes intended for the next major release.
 
+## Acknowledgements
+
+* Paint roller icon made by [Freepik](https://www.flaticon.com/authors/freepik) from [www.flaticon.com](https://www.flaticon.com/)
+
 ## License
 `remove-ansi-colors` is provided under the terms of the [MIT License](https://opensource.org/licenses/mit-license.php).
 
