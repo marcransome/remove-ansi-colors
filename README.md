@@ -1,3 +1,5 @@
+<img alt="paint" src="images/paint-roller.png" width="180" align="right">
+
 # remove-ansi-colors
 
 [![Issues](https://img.shields.io/github/issues/marcransome/remove-ansi-colors)](https://github.com/marcransome/remove-ansi-colors/issues/) [![Dependabot](https://img.shields.io/badge/dependabot-active-brightgreen.svg)](https://github.com/marcransome/remove-ansi-colors/network/dependencies) [![License](https://img.shields.io/badge/license-MIT-blue)](https://opensource.org/licenses/mit-license.php)
@@ -55,6 +57,10 @@ Use one of the following patterns when specifying the version reference for this
 The recommended pattern is `vX` (e.g. `v1`). This will ensure that the version of the action used in your workflow includes the latest non-breaking changes and bug fixes, and guarantees compatibility with previous versions of that major release number.
 
 Using a `main` branch reference in your workflow is _not_ recommended as this branch may include breaking changes intended for the next major release.
+
+## Acknowledgements
+
+* Paint roller icon made by [Freepik](https://www.flaticon.com/authors/freepik) from [www.flaticon.com](https://www.flaticon.com/)
 
 ## License
 `remove-ansi-colors` is provided under the terms of the [MIT License](https://opensource.org/licenses/mit-license.php).
