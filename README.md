@@ -66,4 +66,4 @@ Using a `main` branch reference in your workflow is _not_ recommended as this br
 `remove-ansi-colors` is provided under the terms of the [MIT License](https://opensource.org/licenses/mit-license.php).
 
 ## Contact
-Email me at [marc.ransome@fidgetbox.co.uk](mailto:marc.ransome@fidgetbox.co.uk) or tweet [@marcransome](http://www.twitter.com/marcransome).
+Email me at [marc.ransome@fidgetbox.co.uk](mailto:marc.ransome@fidgetbox.co.uk) or [create an issue](https://github.com/marcransome/remove-ansi-colors/issues).
