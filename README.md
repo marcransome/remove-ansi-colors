@@ -2,7 +2,7 @@
 
 # remove-ansi-colors
 
-[![Issues](https://img.shields.io/github/issues/marcransome/remove-ansi-colors)](https://github.com/marcransome/remove-ansi-colors/issues/) [![Dependabot](https://img.shields.io/badge/dependabot-active-brightgreen.svg)](https://github.com/marcransome/remove-ansi-colors/network/dependencies) [![License](https://img.shields.io/badge/license-MIT-blue)](https://opensource.org/licenses/mit-license.php)
+[![Tests](https://img.shields.io/github/actions/workflow/status/marcransome/remove-ansi-colors/test.yml?branch=main&color=brightgreen&label=tests)](https://github.com/marcransome/remove-ansi-colors/actions) [![Issues](https://img.shields.io/github/issues/marcransome/remove-ansi-colors)](https://github.com/marcransome/remove-ansi-colors/issues/) [![Dependabot](https://img.shields.io/badge/dependabot-active-brightgreen.svg)](https://github.com/marcransome/remove-ansi-colors/network/dependencies) [![License](https://img.shields.io/badge/license-MIT-blue)](https://opensource.org/licenses/mit-license.php)
 
 A GitHub action for removing ANSI color escape sequences from arbitrary strings.
 
