@@ -26,7 +26,7 @@ jobs:
         id: generate-colored-output
         run: |
           colored=$(printf '\e[0;31mCOLORED\e[0m')
-          echo "{colored}={$colored}" >> "$GITHUB_ENV"
+          echo "colored=$colored" >> "$GITHUB_OUTPUT"
       - name: Assert ANSI color escape sequences present in input string
         run: |
           if [[ "${{ steps.generate-colored-output.outputs.colored }}" != $(printf '\e[0;31mCOLORED\e[0m') ]]; then
