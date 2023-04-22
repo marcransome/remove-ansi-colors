@@ -16,15 +16,10 @@ runs:
   steps:
     - id: ansi-code-removal
       run: |
-        # Strip ANSI color escape sequences
         uncolored="$(echo "${{ inputs.colored }}" | perl -pe 's/\e\[[0-9;]*m//g')"
+        eof=$(dd if=/dev/urandom bs=15 count=1 status=none | base64)
 
-        # Replace line feed, carriage return, and percent sign with URL encoding
-        # equivalents; will be substituted correctly in subsequent workflow steps
-        # See: https://github.community/t/set-output-truncates-multiline-strings/16852/5
-        uncolored="${uncolored//'%'/'%25'}"
-        uncolored="${uncolored//$'\n'/'%0A'}"
-        uncolored="${uncolored//$'\r'/'%0D'}"
-
-        echo "uncolored=$uncolored" >> "$GITHUB_OUTPUT"
+        echo "uncolored<<$eof" >> "$GITHUB_OUTPUT"
+        echo "$uncolored" >> "$GITHUB_OUTPUT"
+        echo "$eof" >> "$GITHUB_OUTPUT"
       shell: bash
