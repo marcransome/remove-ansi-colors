@@ -26,7 +26,7 @@ jobs:
         id: generate-colored-output
         run: |
           colored=$(printf '\e[0;31mCOLORED\e[0m')
-          echo "{colored}={$colored}" >> "$GITHUB_OUTPUT"
+          echo "colored=$colored" >> "$GITHUB_OUTPUT"
       - name: Remove ANSI color escape sequences
         uses: marcransome/remove-ansi-colors@v1
         id: remove-ansi-colors
