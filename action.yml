@@ -26,5 +26,5 @@ runs:
         uncolored="${uncolored//$'\n'/'%0A'}"
         uncolored="${uncolored//$'\r'/'%0D'}"
 
-        echo "{uncolored}={$uncolored}" >> "$GITHUB_ENV"
+        echo "{uncolored}={$uncolored}" >> "$GITHUB_OUTPUT"
       shell: bash
