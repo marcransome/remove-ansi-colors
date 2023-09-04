@@ -21,7 +21,7 @@ jobs:
           - ubuntu-latest
     runs-on: ${{ matrix.os }}
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Generate string with ANSI color escape sequences
         id: generate-colored-output
         run: |
