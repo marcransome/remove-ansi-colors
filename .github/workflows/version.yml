@@ -7,5 +7,7 @@ jobs:
   update-tags:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: vweevers/additional-tags-action@v2
+      - name: Checkout repository
+        uses: actions/checkout@9bb56186c3b09b4f86b1c65136769dd318469633 # v4.1.2
+      - name: Update major and minor git tags
+        uses: vweevers/additional-tags-action@3bab55b44e81186dcfef7db9f2cbca01a78eb710 # v2.0.0
