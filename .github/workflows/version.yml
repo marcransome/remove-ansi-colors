@@ -1,4 +1,4 @@
-name: Release tag management
+name: Update release tags
 on:
   push:
     tags:
@@ -9,6 +9,7 @@ permissions:
 
 jobs:
   update-tags:
+    name: Update release tags
     runs-on: ubuntu-latest
     permissions:
       contents: write
