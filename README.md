@@ -59,7 +59,7 @@ The recommended pattern when using tags is `vX` (e.g. `v1`). This will ensure th
 
 >[!TIP]
 >
-> For improved securiy, pin the action to a full length commit SHA rather than a tag version and [use Dependabot version updates to keep the action up to date](https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions#using-dependabot-version-updates-to-keep-actions-up-to-date). For example:
+> For improved security, pin the action to a full length commit SHA rather than a tag version and [use Dependabot version updates to keep the action up to date](https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions#using-dependabot-version-updates-to-keep-actions-up-to-date). For example:
 >
 > ```yaml
 > uses: marcransome/remove-ansi-colors@88e03a4ec5e23f3d97e93c76051c1cd7d4389881 # v1.4.1
