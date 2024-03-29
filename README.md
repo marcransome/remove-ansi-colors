@@ -55,7 +55,15 @@ Use one of the following patterns when specifying the version reference for this
 | `vX.Y`   | `v1.1`    | the latest `v1.1.*` release including bug fixes                        |
 | `vX.Y.Z` | `v1.1.0`  | the `v1.1.0` release only                                              |
 
-The recommended pattern is `vX` (e.g. `v1`). This will ensure that the version of the action used in your workflow includes the latest non-breaking changes and bug fixes, and guarantees compatibility with previous versions of that major release number.
+The recommended pattern when using tags is `vX` (e.g. `v1`). This will ensure that the version of the action used in your workflow includes the latest non-breaking changes and bug fixes, and guarantees compatibility with previous versions of that major release number.
+
+>[!TIP]
+>
+> For improved security, pin the action to a full length commit SHA rather than a tag version and [use Dependabot version updates to keep the action up to date](https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions#using-dependabot-version-updates-to-keep-actions-up-to-date). For example:
+>
+> ```yaml
+> uses: marcransome/remove-ansi-colors@88e03a4ec5e23f3d97e93c76051c1cd7d4389881 # v1.4.1
+> ```
 
 Using a `main` branch reference in your workflow is _not_ recommended as this branch may include breaking changes intended for the next major release.
 
