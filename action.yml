@@ -14,9 +14,12 @@ outputs:
 runs:
   using: 'composite'
   steps:
-    - id: ansi-code-removal
+    - name: Remove ANSI color escape sequences
+      id: ansi-code-removal
+      env:
+        COLORED: ${{ inputs.colored }}
       run: |
-        uncolored="$(echo "${{ inputs.colored }}" | perl -pe 's/\e\[[0-9;]*m//g')"
+        uncolored="$(echo "$COLORED" | perl -pe 's/\e\[[0-9;]*m//g')"
         eof=$(dd if=/dev/urandom bs=15 count=1 2>/dev/null | base64)
 
         echo "uncolored<<$eof" >> "$GITHUB_OUTPUT"
