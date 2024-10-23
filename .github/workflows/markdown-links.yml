@@ -13,13 +13,13 @@ jobs:
       pull-requests: write
     steps:
       - name: Checkout repository
-        uses: actions/checkout@eef61447b9ff4aafe5dcd4e0bbf5d482be7e7871 # v4.2.1
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
       - name: Harden runner
         uses: step-security/harden-runner@91182cccc01eb5e619899d80e4e971d6181294a7 # v2.10.1
         with:
           egress-policy: audit
       - name: Check links in Markdown files
-        uses: umbrelladocs/action-linkspector@04615112d3a3fa32c5d2f08feb9c34715571116a # v1.2.3
+        uses: umbrelladocs/action-linkspector@fc382e19892aca958e189954912fe379a8df270c # v1.2.4
         with:
           fail_on_error: true
           filter_mode: nofilter
