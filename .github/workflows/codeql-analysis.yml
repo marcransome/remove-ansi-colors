@@ -13,8 +13,8 @@ on:
 permissions: read-all
 
 jobs:
-  analyze:
-    name: CodeQL analysis
+  analyze-actions:
+    name: CodeQL GitHub Actions analysis
     runs-on: ubuntu-latest
     permissions:
       security-events: write
