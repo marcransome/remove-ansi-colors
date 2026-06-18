@@ -20,6 +20,6 @@ jobs:
           allowed-endpoints: >
             github.com:443
       - name: Checkout repository
-        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
       - name: Update major and minor git tags
         uses: vweevers/additional-tags-action@3bab55b44e81186dcfef7db9f2cbca01a78eb710 # v2.0.0
