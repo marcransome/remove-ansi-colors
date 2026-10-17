@@ -23,10 +23,12 @@ jobs:
         os:
           - ubuntu-22.04
           - ubuntu-24.04
-          - macos-14
+          - ubuntu-26.04
           - macos-15
           - macos-15-intel
           - macos-26
+          - macos-26-intel
+          - xcode-27
     runs-on: ${{ matrix.os }}
     steps:
       - name: Harden runner
